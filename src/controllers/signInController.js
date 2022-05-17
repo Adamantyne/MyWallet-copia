@@ -7,12 +7,6 @@ export default async function postSignIn(req,res){
     const {email} = req.body;
     const user = res.locals.user;
     try{
-        const oldSession=await db.collection("sessions").findOne({email});
-        if(oldSession){
-            
-            await db.collection("sessions").deleteOne({email});
-            await db.collection("oldSessions").insertOne(oldSession);
-        }
         const token = uuid();
         await db.collection("sessions").insertOne({
             email:email, 
