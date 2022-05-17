@@ -22,6 +22,6 @@ export default async function postSignIn(req,res){
         delete user._id
         res.status(201).send({user,token});
     }catch(e){
-        res.status(500).send(chalk.red("erro signIn: "+ e));
+        res.status(500).send(chalk.red("erro signIn "+ e));
     }
 }
