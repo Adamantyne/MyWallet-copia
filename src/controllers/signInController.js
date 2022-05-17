@@ -18,7 +18,6 @@ export default async function postSignIn(req,res){
             token:token,
             time: dayjs().format("DD/MM/YYYY h:mm:ss")
         });
-        const session = await db.collection("sessions").find({email}).toArray();
         delete user.password;
         delete user._id
         res.status(201).send({user,token});
