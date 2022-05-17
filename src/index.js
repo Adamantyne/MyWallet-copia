@@ -12,5 +12,5 @@ app.use(router);
 
 const port = process.env.PORT || 5000;
 app.listen(port,()=>{
-    console.log(chalk.green("servidor ok"));
+    console.log(chalk.green(`servidor ok`));
 });
